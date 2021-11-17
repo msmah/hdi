@@ -43,6 +43,9 @@ lm.pval <- function(x, y, exact = TRUE, ...)
   ## ----------------------------------------------------------------------
   ## Author: Lukas Meier, Date:  2 Apr 2013, 11:34
 
+  cat('lm.pval was called\n')
+  cat(dim(x))
+  cat(length(y))
   fit.lm <- lm(y ~ x, ...) ## Intercept??? Exceptions???
   fit.summary <- summary(fit.lm)
 
