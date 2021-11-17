@@ -6,7 +6,7 @@ lasso.cv <- function(x, y, nfolds = 10, lambda, grouped = nrow(x) > 3 * nfolds, 
   ## ----------------------------------------------------------------------
   ## Author: Lukas Meier, Date: 25 Mar 2013, 17:08
   cat('lasso.cv was called\n')
-  cat(c('nfold = ',nfolds,'\n'))
+  cat(c('nfolds = ',nfolds,'\n'))
   cat(c('lambda = ',lambda,'\n'))
   fit.cv <- cv.glmnet(x, y, nfolds = nfolds, lambda = lambda, grouped = grouped, ...)
   ## Use default value of "lambda1.se" in cv.glmnet optimal lambda sel.
