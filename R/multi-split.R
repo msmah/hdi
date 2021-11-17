@@ -19,6 +19,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
 
   n <- nrow(x)
   p <- ncol(x)
+  pb <- txtProgressBar(0, B, style=3)
 
   n.left  <- floor(n * fraction)
   n.right <- n - n.left
@@ -145,7 +146,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
         break;
         }
     } ## end while(try.again)
-
+    setTxtProgressBar(pb, b)
     ## return
     list(pvals        = pvals.v,
          sel.models   = sel.models,
