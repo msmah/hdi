@@ -50,7 +50,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       x.right <- x[-split,]
       y.right <- y[-split]
 
-      cat("splitting was done (in function oneSplite) ...")
+      cat("splitting left-right was done (in function oneSplite) ...")
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
@@ -132,6 +132,8 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
              " sample splits resulted in too large models...giving up")
           ## try.again <- FALSE
       }
+      cat('mem_used = ')
+      message(mem_used())
     } ## end while(try.again)
 
     ## return
