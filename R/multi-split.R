@@ -54,6 +54,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       message(c('left size = ', dim(x.left), length(y.left)))
       message(c('right size = ', dim(x.right), length(y.right)))
       
+      cat(args.model.selector)
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
