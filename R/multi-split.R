@@ -173,7 +173,6 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       if(verbose)
         cat("...starting parallelization of sample-splits\n")
       mclapply(1:B, oneSplit, mc.cores = ncores)
-      # cat("mclapply in split.out was DONE!")
     }
     else {
       if(verbose)
@@ -184,7 +183,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       else
         replicate(B, oneSplit(), simplify = FALSE)
     }
-  
+  cat("split.out and mclapply in split.out were DONE!")
   ############################################
   ## Allow hierarchical testing with result ##
   ############################################
