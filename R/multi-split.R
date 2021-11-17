@@ -134,6 +134,10 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       }
       cat('mem_used = ')
       message(mem_used())
+      if(mem_used() > 100000000000){
+        cat('too much memory usage')
+        break;
+        }
     } ## end while(try.again)
 
     ## return
