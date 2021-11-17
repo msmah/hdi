@@ -173,7 +173,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       if(verbose)
         cat("...starting parallelization of sample-splits\n")
       mclapply(1:B, oneSplit, mc.cores = ncores)
-      cat("mclapply in split.out was DONE!")
+      # cat("mclapply in split.out was DONE!")
     }
     else {
       if(verbose)
