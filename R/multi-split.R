@@ -50,28 +50,23 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       x.right <- x[-split,]
       y.right <- y[-split]
 
-      cat("splitting left-right was done (in function oneSplite) ...")
-      cat('mem_used = ')
-      message(mem_used())
-      if(mem_used() > 190000000000){
-        cat('too much memory usage')
-        break;
-        }
+      cat("splitting left-right was done (in function oneSplite) ...\n")
+      message(c('left size = ', dim(x.left), length(y.left)))
+      message(c('right size = ', dim(x.right), length(y.right)))
+      
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
 
       p.sel <- length(sel.model)
-      cat('mem_used = ')
-      message(mem_used())
-      if(mem_used() > 190000000000){
-        cat('too much memory usage')
-        break;
-        }
+      cat(c('p.sel',p.sel))
+      
       ## Classical situation:
       ## A model with intercept is used, hence p.sel + 1 < nrow(x.right),
       ## otherwise, p-values can *not* be calculated
       if(p.sel > 0 && p.sel < nrow(x.right) - 1) {
+        if(verbose)
+          cat('p.sel > 0 && p.sel < nrow(x.right) - 1')
         sel.pval <- do.call(classical.fit,
                             args = c(list(x = x.right[,sel.model],
                                           y = y.right), args.classical.fit))
