@@ -12,7 +12,7 @@ lasso.cv <- function(x, y, nfolds = 10, lambda, grouped = nrow(x) > 3 * nfolds, 
   fit.cv <- cv.glmnet(x, y, nfolds = nfolds, lambda = lambda, grouped = grouped, ...)
   ## Use default value of "lambda1.se" in cv.glmnet optimal lambda sel.
   sel <- predict(fit.cv, type = "nonzero") ## Intercept??? Exceptions???
-  cat('lasso.cv finished')
+  cat('lasso.cv finished\n')
   sel[[1]] ## ugly...
 }
 
