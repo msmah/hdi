@@ -52,7 +52,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
 
       cat("splitting left-right was done (in function oneSplite) ...\n")
       message(paste0('left size = ', nrow(x.left),' by ', ncol(x.left), ', ', length(y.left)))
-      message(c('right size = ', dim(x.right), length(y.right)))
+      message(paste0('right size = ', nrow(x.right), ' by ', ncol(x.right), ', ', length(y.right)))
       
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
