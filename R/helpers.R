@@ -44,19 +44,21 @@ lm.pval <- function(x, y, exact = TRUE, ...)
   ## Author: Lukas Meier, Date:  2 Apr 2013, 11:34
 
   cat('lm.pval was called\n')
-  cat(dim(x))
+  cat(c(dim(x),'\n'))
   cat(length(y))
   fit.lm <- lm(y ~ x, ...) ## Intercept??? Exceptions???
   fit.summary <- summary(fit.lm)
 
   tstat <- coef(fit.summary)[-1, "t value"] ## Intercept??? Exceptions???
-
+  message(tstat)
+  
   ## return p-values
   setNames(2 * (if(exact) ## Use appropriate t-dist
                   pt(abs(tstat), df = fit.lm$df.residual, lower.tail = FALSE)
                 else  ## p-values based on *normal* distribution
                   pnorm(abs(tstat), lower.tail = FALSE)),
            colnames(x))
+   cat('lm.pval finished')
 }
 
 lm.ci <- function(x, y, level = 0.95, ...)
