@@ -50,6 +50,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       x.right <- x[-split,]
       y.right <- y[-split]
 
+      cat("splitting was done (in function oneSplite) ...")
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
