@@ -213,7 +213,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
   #####################
   ## Extract objects ##
   #####################
-
+  saveRDS(object = split.out, file = 'Processed_Data/split.out.RDS')
   myExtract <- function(name) {
     cat('Function myExtract')
     cat(class(split.out))
