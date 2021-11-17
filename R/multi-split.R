@@ -215,6 +215,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
   #####################
 
   myExtract <- function(name) {
+    cat('Function myExtract')
     cat(class(split.out))
     cat(dim(split.out))
     cat(split.out)
