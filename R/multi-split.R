@@ -167,7 +167,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
     if(parallel) {
       stopifnot(isTRUE(is.finite(ncores)), ncores >= 1L)
       if(verbose)
-        cat("...starting parallelization of sample-splits\n")
+        cat("\n...starting parallelization of sample-splits\n")
       mclapply(1:B, oneSplit, mc.cores = ncores)
     }
     else {
