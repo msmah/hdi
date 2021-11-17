@@ -217,6 +217,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
   myExtract <- function(name) {
     cat(class(split.out))
     cat(dim(split.out))
+    cat(split.out)
     cat(name)
     matrix(unlist(lapply(split.out, "[[", name)), nrow = B, byrow = TRUE)
   }
