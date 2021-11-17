@@ -51,16 +51,15 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       y.right <- y[-split]
 
       cat("splitting left-right was done (in function oneSplite) ...\n")
-      message(c('left size = ', dim(x.left), length(y.left)))
+      message(paste0('left size = ', nrow(x.left),' by ', ncol(x.left), ', ', length(y.left)))
       message(c('right size = ', dim(x.right), length(y.right)))
       
-      cat(args.model.selector$lambda)
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
 
       p.sel <- length(sel.model)
-      cat(c('p.sel',p.sel))
+      cat(c('p.sel = ',p.sel,'\n'))
       
       ## Classical situation:
       ## A model with intercept is used, hence p.sel + 1 < nrow(x.right),
