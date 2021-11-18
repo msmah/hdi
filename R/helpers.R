@@ -63,7 +63,6 @@ lm.pval <- function(x, y, exact = TRUE, ...)
                   pnorm(abs(tstat), lower.tail = FALSE)),
            tstat_names)
            #colnames(x))
-   cat('lm.pval finished')
 }
 
 lm.ci <- function(x, y, level = 0.95, ...)
