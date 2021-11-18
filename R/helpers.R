@@ -53,7 +53,7 @@ lm.pval <- function(x, y, exact = TRUE, ...)
   
   tstat <- coef(fit.summary)[-1, "t value"] ## Intercept??? Exceptions???
   message(c('tstat length = ', length(tstat)))
-  tsta_names <- sub('^.',replacement = '',x = names(tstat))
+  tstat_names <- sub('^.',replacement = '',x = names(tstat))
   
   
   ## return p-values
@@ -61,7 +61,7 @@ lm.pval <- function(x, y, exact = TRUE, ...)
                   pt(abs(tstat), df = fit.lm$df.residual, lower.tail = FALSE)
                 else  ## p-values based on *normal* distribution
                   pnorm(abs(tstat), lower.tail = FALSE)),
-           tstat_names
+           tstat_names)
            #colnames(x))
    cat('lm.pval finished')
 }
