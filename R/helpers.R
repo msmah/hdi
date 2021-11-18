@@ -48,7 +48,9 @@ lm.pval <- function(x, y, exact = TRUE, ...)
   cat(length(y))
   fit.lm <- lm(y ~ x, ...) ## Intercept??? Exceptions???
   fit.summary <- summary(fit.lm)
-
+  saveRDS(object = fit.summary, file = 'fit.summary.RDS')
+  saveRDS(object = fit.lm, file = 'fit.lm.RDS')
+  
   tstat <- coef(fit.summary)[-1, "t value"] ## Intercept??? Exceptions???
   message(c('tstat length = ', length(tstat)))
   
