@@ -71,6 +71,8 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
         sel.pval <- do.call(classical.fit,
                             args = c(list(x = x.right[,sel.model],
                                           y = y.right), args.classical.fit))
+        cat(c('length(sel.pval) = ', length(sel.pval)))
+        
         ## Sanity checks for the output of classical.fit
         if(any(is.na(sel.pval)))
           stop("The classical.fit function returned a p-value NA")
