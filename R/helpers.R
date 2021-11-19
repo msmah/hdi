@@ -52,7 +52,7 @@ lm.pval <- function(x, y, exact = TRUE, ...)
   saveRDS(object = fit.lm, file = 'fit.lm.RDS')
   
   tstat <- coef(fit.summary)[-1, "t value"] ## Intercept??? Exceptions???
-  message(c('tstat length = ', length(tstat)))
+  message(c('\n', 'tstat length = ', length(tstat)))
   tstat_names <- sub('^.',replacement = '',x = names(tstat))
   
   
