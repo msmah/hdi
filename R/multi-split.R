@@ -73,6 +73,10 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
                                           y = y.right), args.classical.fit))
         cat(c('length(sel.pval) = ', length(sel.pval)))
         
+        ## Updating the selected model by removing collinear features
+        sel.model <- sel.model[which(names(sel.model) %in% names(sel.pval))]
+        p.sel <- length(sel.model)
+        
         ## Sanity checks for the output of classical.fit
         if(any(is.na(sel.pval)))
           stop("The classical.fit function returned a p-value NA")
