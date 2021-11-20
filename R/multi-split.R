@@ -73,7 +73,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
         sel.pval <- do.call(classical.fit,
                             args = c(list(x = x.right[,sel.model],
                                           y = y.right), args.classical.fit))
-        cat(c('length(sel.pval) = ', length(sel.pval),'\n'))
+        cat(c('\n','length(sel.pval) = ', length(sel.pval),'\n'))
         cat(c('\n','head(names(sel.pval)) = ',head(names(sel.pval),10)))
         cat(c('\n','tail(names(sel.pval)) = ',tail(names(sel.pval),10)))
         
