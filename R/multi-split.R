@@ -58,6 +58,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
+      cat(c('\n','head(names(sel.model)) = ',head(names(sel.model),10)))
 
       p.sel <- length(sel.model)
       cat(c('p.sel = ',p.sel,'\n'))
@@ -72,6 +73,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
                             args = c(list(x = x.right[,sel.model],
                                           y = y.right), args.classical.fit))
         cat(c('length(sel.pval) = ', length(sel.pval),'\n'))
+        cat(c('\n','head(names(sel.pval)) = ',head(names(sel.pval),10)))
         
         ## Updating the selected model by removing collinear features
         sel.model <- sel.model[which(names(sel.model) %in% names(sel.pval))]
