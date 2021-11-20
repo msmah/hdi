@@ -58,7 +58,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
       sel.model <- do.call(model.selector,
                            args = c(list(x = x.left, y = y.left),
                                     args.model.selector))
-      cat(c('\n','head(names(sel.model)) = ',head(names(sel.model),10)))
+      cat(c('\n','head((sel.model)) = ',head((sel.model),10)))
 
       p.sel <- length(sel.model)
       cat(c('p.sel = ',p.sel,'\n'))
