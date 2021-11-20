@@ -54,7 +54,7 @@ lm.pval <- function(x, y, exact = TRUE, ...)
   tstat <- coef(fit.summary)[-1, "t value"] ## Intercept??? Exceptions???
   message(c('\n', 'tstat length = ', length(tstat)))
   tstat_names <- sub('^.',replacement = '',x = names(tstat))
-  
+  cat([colnames(x)[which(!(colnames(x) %in% tstat_names))])
   
   ## return p-values
   setNames(2 * (if(exact) ## Use appropriate t-dist
