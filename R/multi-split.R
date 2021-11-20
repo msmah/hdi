@@ -76,7 +76,7 @@ multi.split <- function(x, y, B = 100, fraction = 0.5,
         cat(c('\n','head(names(sel.pval)) = ',head(names(sel.pval),10)))
         
         ## Updating the selected model by removing collinear features
-        sel.model <- sel.model[which(names(sel.model) %in% names(sel.pval))]
+        #sel.model <- sel.model[which(names(sel.model) %in% names(sel.pval))]
         p.sel <- length(sel.model)
         cat(c('length(p.sel) = ', length(p.sel)))
         
